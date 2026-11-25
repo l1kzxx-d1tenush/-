@@ -5,7 +5,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - run: xcrun -sdk iphoneos clang -arch arm64 -dynamiclib -fobjc-arc -miphoneos-version-min=9.0 -framework UIKit -framework Foundation -o ModMenu.dylib Tweak.m
+      - run: xcrun -sdk iphoneos clang -arch arm64 -dynamiclib -fobjc-arc -miphoneos-version-min=9.0 -framework UIKit -framework Foundation -framework CoreGraphics -o ModMenu.dylib Tweak.m
       - uses: actions/upload-artifact@v4
         with:
           name: ModMenu
